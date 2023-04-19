@@ -1,0 +1,77 @@
+
+.topos-container{
+  height: 100vh;
+
+}
+button{
+  border: none;
+  background: none;
+}
+.imagen{
+  position: relative;
+  width: 250px;
+  transition: all .3s ease;
+}
+
+.imagen img:first-child{
+  position: relative;
+  z-index: 0;
+  border-radius: 4px;
+  width: 200px;
+
+}
+
+.imagen img:last-child{
+  position: absolute;
+  width: 150px;
+  bottom: 20px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  transition: .3s ease;
+  transform: translateY(25%);
+  opacity: 0;
+}
+
+.active:hover{
+  transition: .3s ease;
+  transform:
+    perspective(250px)
+    translateY(5%)
+    translateZ(0);
+}
+
+.active::before{
+  content: '';
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+
+  transition: .3s ease;
+
+}
+
+.active::before{
+  opacity: 1;
+  z-index: 10;
+  transition: .3s ease;
+
+}
+
+.active img:first-child{
+  filter: blur(4px);
+  transition: .3s ease;
+
+}
+
+.active img:last-child{
+  transition: .3s ease;
+
+  opacity: 1;
+  transform:
+  translateY(10%);
+  box-shadow: 0 20px 20px -20px #311405;
+}
+

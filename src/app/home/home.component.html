@@ -1,0 +1,17 @@
+
+<h2>este es tu Score: {{score}}</h2>
+
+<div class="flex topos-container justify-content-evenly align-items-center">
+  <h2>{{numeroRandom | async}}</h2>
+  <div *ngFor="let topo of topos">
+    <button  class="imagen" *ngIf="!topo.status">
+      <img src="../../assets/img/agujero.png" alt="" class="pozo">
+      <img src="../../assets/img/topo.png" alt="topo" class="topo">
+    </button>
+    <button  class="imagen active" *ngIf="topo.status" (click)="handleScore()">
+      <img src="../../assets/img/agujero.png" alt="" class="pozo">
+      <img src="../../assets/img/topo.png" alt="topo" class="topo">
+    </button>
+  </div>
+</div>
+
